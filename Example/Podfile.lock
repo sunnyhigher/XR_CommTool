@@ -1,0 +1,50 @@
+PODS:
+  - KRActivityIndicatorView (3.0.4)
+  - KRProgressHUD (3.4.4):
+    - KRActivityIndicatorView (= 3.0.4)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
+  - SVProgressHUD (2.2.5)
+  - UMCAnalytics (6.0.5):
+    - UMCCommon
+  - UMCCommon (2.1.1)
+  - UMCSecurityPlugins (1.0.6)
+  - XR_CommonTool (0.0.1):
+    - KRProgressHUD
+    - NVActivityIndicatorView
+    - SVProgressHUD
+
+DEPENDENCIES:
+  - UMCAnalytics
+  - UMCCommon
+  - UMCSecurityPlugins
+  - XR_CommonTool (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - KRActivityIndicatorView
+    - KRProgressHUD
+    - NVActivityIndicatorView
+    - SVProgressHUD
+    - UMCAnalytics
+    - UMCCommon
+    - UMCSecurityPlugins
+
+EXTERNAL SOURCES:
+  XR_CommonTool:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  KRActivityIndicatorView: 549db10b9578d58bac73db063d8b544e8970f7f2
+  KRProgressHUD: c3b9a48a0ee4824ea13212ac3f1efa50dca021e3
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  UMCAnalytics: 045be2cd1ec05aa95ad62405a850757f932e2d59
+  UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
+  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
+  XR_CommonTool: bc12583e0e17f7eed60462476ba4a9b3c90c15a2
+
+PODFILE CHECKSUM: c971fcb731f0c56e4d670aab0892d2d1d5927890
+
+COCOAPODS: 1.7.5
