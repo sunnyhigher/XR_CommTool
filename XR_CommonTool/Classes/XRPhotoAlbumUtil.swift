@@ -9,21 +9,21 @@
 import Photos
  
 //操作结果枚举
-enum PhotoAlbumUtilResult {
+public enum PhotoAlbumUtilResult {
     case success, error, denied
 }
  
 //相册操作工具类
-class PhotoAlbumUtil: NSObject {
+public class PhotoAlbumUtil: NSObject {
      
     //判断是否授权
-    class func isAuthorized() -> Bool {
+    public class func isAuthorized() -> Bool {
         return PHPhotoLibrary.authorizationStatus() == .authorized ||
             PHPhotoLibrary.authorizationStatus() == .notDetermined
     }
      
     // 创建相册
-    class func createImageInAlbum(albumName: String) {
+    public class func createImageInAlbum(albumName: String) {
         
         var assetAlbum: PHAssetCollection?
         //看保存的指定相册是否存在
@@ -49,7 +49,7 @@ class PhotoAlbumUtil: NSObject {
     }
     
     //保存图片到相册
-    class func saveImageInAlbum(image: UIImage, albumName: String = "",
+    public class func saveImageInAlbum(image: UIImage, albumName: String = "",
                                 completion: ((_ result: PhotoAlbumUtilResult) -> ())?) {
          
         //权限验证
