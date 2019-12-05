@@ -109,7 +109,7 @@ public extension UIView {
     }
 }
 
-// MARK: - 设置View圆角,边框,边框颜色
+// MARK: - 设置XIB 中 View圆角,边框,边框颜色
 public extension UIView {
     @IBInspectable var cornerRadius: CGFloat {
         get{

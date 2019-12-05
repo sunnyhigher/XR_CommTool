@@ -16,8 +16,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let tool = PurchaseTool()
+        _ = PurchaseTool()
         
+        let list = [1,2,3,4,5]
+        _ = list[safe: 10]
+         _ = list.indexes(of: 4)
     }
 
     override func didReceiveMemoryWarning() {

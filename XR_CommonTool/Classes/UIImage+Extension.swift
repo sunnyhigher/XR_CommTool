@@ -49,8 +49,6 @@ public extension UIImage {
 // MARK: - 修改图片尺寸
 public extension UIImage {
     func scaleToSize(size:CGSize) -> UIImage {
-        
-        
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
         self.draw(in: CGRect(origin: .zero, size: size))
         let resizedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -159,5 +157,48 @@ public extension UIImage {
         
         return img!
     }
+}
+
+// MARK: - 图片压缩
+public extension UIImage {
+    func compressImageOnlength(maxLength: Int) -> Data? {
+        guard let vData = self.pngData() else { return nil }
+        if vData.count <= maxLength {
+            return vData
+        }
+        var compress:CGFloat = 0.9
+        guard var data = self.jpegData(compressionQuality: compress) else { return nil }
+        while data.count > maxLength && compress > 0.01 {
+            compress -= 0.01
+            data = self.jpegData(compressionQuality: compress)!
+        }
+        
+        return data
+    }
+    
+    //切割圆角
+    func clip(radius: CGFloat) -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(CGSize(width:radius * 2,height:radius * 2), false, UIScreen.main.scale)
+        let ctx = UIGraphicsGetCurrentContext()
+        ctx?.addArc(center: CGPoint(x: radius,y: radius), radius: radius, startAngle: 0, endAngle: .pi/180 * 360, clockwise: true)
+        ctx?.clip()
+        self.draw(in: CGRect(origin: .zero, size: CGSize(width: radius*2, height: radius*2)))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+    
+    //翻转
+    func flip()->UIImage{
+        UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.main.scale)
+        let ctx = UIGraphicsGetCurrentContext()
+        ctx?.scaleBy(x: -1, y: 1)
+        ctx?.translateBy(x: -self.size.width, y: 0)
+        self.draw(in: CGRect(origin: .zero, size: self.size))
+        let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
 }
 

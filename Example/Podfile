@@ -6,9 +6,6 @@ target 'XR_CommonTool_Example' do
   target 'XR_CommonTool_Tests' do
     inherit! :search_paths
     
-    pod 'UMCCommon'
-    pod 'UMCAnalytics'
-    pod 'UMCSecurityPlugins'
     
   end
 end

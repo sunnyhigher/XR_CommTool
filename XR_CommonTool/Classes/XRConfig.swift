@@ -15,9 +15,10 @@ public let kWindow = UIApplication.shared.keyWindow!
 
 public let myAppDelegate = UIApplication.shared.delegate
 
-/// 宽度系数比
+/// 适配系数-宽 以6为标准
 public let scaleWidth : CGFloat = kScreenW / 375.0
 
+/// 适配系数-高 以6为标准
 public let scaleHeight : CGFloat = kScreenH / 667.0
 
 
