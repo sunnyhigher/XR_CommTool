@@ -5,10 +5,12 @@ PODS:
   - NVActivityIndicatorView (4.8.0):
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
+  - ReachabilitySwift (5.0.0)
   - SVProgressHUD (2.2.5)
-  - XR_CommonTool (0.0.2):
+  - XR_CommonTool (0.0.4):
     - KRProgressHUD
     - NVActivityIndicatorView
+    - ReachabilitySwift
     - SVProgressHUD
 
 DEPENDENCIES:
@@ -20,6 +22,8 @@ SPEC REPOS:
     - KRProgressHUD
     - NVActivityIndicatorView
     - SVProgressHUD
+  trunk:
+    - ReachabilitySwift
 
 EXTERNAL SOURCES:
   XR_CommonTool:
@@ -29,8 +33,9 @@ SPEC CHECKSUMS:
   KRActivityIndicatorView: 549db10b9578d58bac73db063d8b544e8970f7f2
   KRProgressHUD: c3b9a48a0ee4824ea13212ac3f1efa50dca021e3
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  XR_CommonTool: f452e2cad44b401bcdea9582216842c0e7c779a4
+  XR_CommonTool: a5fd65d37649e5adac0796c3480025c03df52db9
 
 PODFILE CHECKSUM: 5a3772a611c8a92fae9170753471d13ea7922b52
 

@@ -21,6 +21,16 @@ class ViewController: UIViewController {
         let list = [1,2,3,4,5]
         _ = list[safe: 10]
          _ = list.indexes(of: 4)
+        
+        
+        XRReachabilityManager.networkChange { [weak self] (result) in
+                   if result {
+                       
+                   } else {
+                       
+                   }
+               }
+        
     }
 
     override func didReceiveMemoryWarning() {

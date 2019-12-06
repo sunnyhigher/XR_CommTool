@@ -1,6 +1,6 @@
 {
   "name": "XR_CommonTool",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "summary": "公司自用工具集合.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/sunnyhigher/XR_CommTool",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/sunnyhigher/XR_CommTool.git",
-    "tag": "0.0.2"
+    "tag": "0.0.4"
   },
   "swift_versions": "5.0",
   "platforms": {
@@ -29,6 +29,9 @@
 
     ],
     "NVActivityIndicatorView": [
+
+    ],
+    "ReachabilitySwift": [
 
     ]
   },

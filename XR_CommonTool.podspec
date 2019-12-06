@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'XR_CommonTool'
-    s.version          = '0.0.3'
+    s.version          = '0.0.4'
     s.summary          = '公司自用工具集合.'
     
     # This description is used to generate tags and improve search results.
@@ -42,5 +42,6 @@ Pod::Spec.new do |s|
     s.dependency "KRProgressHUD"
     s.dependency "SVProgressHUD"
     s.dependency "NVActivityIndicatorView"
+    s.dependency "ReachabilitySwift"
     
 end

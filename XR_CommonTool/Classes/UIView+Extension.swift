@@ -142,7 +142,7 @@ public extension UIView {
 
 // MARK: - 将View内容截图返回
 public extension UIView {
-    func image() -> UIImage {
+    func xr_image() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0)
         guard let context = UIGraphicsGetCurrentContext() else {
             return UIImage()
