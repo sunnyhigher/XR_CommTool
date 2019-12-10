@@ -7,7 +7,7 @@ PODS:
   - NVActivityIndicatorView/Presenter (4.8.0)
   - ReachabilitySwift (5.0.0)
   - SVProgressHUD (2.2.5)
-  - XR_CommonTool (0.0.4):
+  - XR_CommonTool (0.0.6):
     - KRProgressHUD
     - NVActivityIndicatorView
     - ReachabilitySwift
@@ -35,7 +35,7 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  XR_CommonTool: a5fd65d37649e5adac0796c3480025c03df52db9
+  XR_CommonTool: 624945a85856cc5e9ea03abd90d884cfdc235c01
 
 PODFILE CHECKSUM: 5a3772a611c8a92fae9170753471d13ea7922b52
 
