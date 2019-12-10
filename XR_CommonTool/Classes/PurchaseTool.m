@@ -8,6 +8,7 @@
 
 #import "PurchaseTool.h"
 #import <StoreKit/StoreKit.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 
 @interface PurchaseTool()<SKPaymentTransactionObserver,SKProductsRequestDelegate> {
@@ -69,7 +70,7 @@ static PurchaseTool *_PopTools = nil;
 - (void)PopPayingWithProductID:(NSString *)productID
              andCompleteHandle:(IAPPayCompletionHandle)handle {
     _PopProID = productID;
-    //[SVProgressHUD showWithStatus:@"Loading..."];
+    [SVProgressHUD showWithStatus:@"Loading..."];
     if (_PopBusying) {
         return;
     }
@@ -99,7 +100,7 @@ static PurchaseTool *_PopTools = nil;
     _PopBusying = YES;
     _PopCanExist = YES;
     _PopCanRestore = YES;
-     //[SVProgressHUD showInfoWithStatus:@"Restore Transaction..."];
+     [SVProgressHUD showInfoWithStatus:@"Restore Transaction..."];
     self.PopHandle = handle;
     
     NSLog(@"IAP restore transactions start --");
@@ -166,7 +167,7 @@ static PurchaseTool *_PopTools = nil;
             case SKPaymentTransactionStatePurchased:
                 NSLog(@"IAP Transaction is in queue, user has been charged.  Client should complete the transaction.");
                 if (_PopIsPaying) {
-                     //[SVProgressHUD showInfoWithStatus:@"Waiting"];
+                     [SVProgressHUD showInfoWithStatus:@"Waiting"];
                 }
                 [self PopVerifyPurchaseWithPaymentTransaction:tran isTestServer:_PopIsTestServer Compl:^(NSDate *date) {
                 }];
@@ -245,7 +246,7 @@ static PurchaseTool *_PopTools = nil;
     _PopBusying = NO;
     _PopCanRestore = YES;
     _PopIsPaying = YES;
-    //[SVProgressHUD dismiss];
+    [SVProgressHUD dismiss];
     if(self.PopHandle && _PopCanExist){
         _PopCanExist = NO;
         self.PopHandle(type,data);
@@ -321,7 +322,7 @@ static PurchaseTool *_PopTools = nil;
                 if (currentDate &&
                     expiresDate &&
                     ([[currentDate earlierDate:expiresDate] compare:currentDate] == NSOrderedSame)) {
-                     //[SVProgressHUD showInfoWithStatus:@"Authentication is Successful"];
+                     [SVProgressHUD showInfoWithStatus:@"Authentication is Successful"];
                     [self PopHandleActionWithType:IAPPayStateTypeVerSuccess data:nil];
                 }else{
                     [self PopHandleActionWithType:IAPPayStateTypeVerFailed data:nil];
