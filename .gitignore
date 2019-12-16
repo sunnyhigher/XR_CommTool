@@ -27,6 +27,7 @@ xcuserdata/
 *.ipa
 *.dSYM.zip
 *.dSYM
+*.DS_Store
 
 ## Playgrounds
 timeline.xctimeline
@@ -66,3 +67,4 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+Example/.DS_Store
