@@ -75,7 +75,7 @@ public func XXLog<T>(_ message: T,
     #endif
 }
 
-/// HUDView
+// MARK: - HUDView
 public class HUDView: UIView {
     
     public var activityIndicatorView: NVActivityIndicatorView?

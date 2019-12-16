@@ -25,22 +25,23 @@ public let scaleHeight : CGFloat = kScreenH / 667.0
 /// iPhoneX 系列机型
 public let kIPhoneX = kScreenW >= 375 && kScreenH >= 812 && (UIDevice.current.systemVersion as NSString).floatValue >= Float(11.0) && !(UIDevice.current.model as NSString).isEqual(to: "iPad")
 
-/// 适配iPhoneX
-// 获取底部的安全距离，全面屏手机为34pt，非全面屏手机为0pt
-// 底部的安全距离
-public let bottomSafeAreaHeight = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0
 
-/// 顶部的安全距离
-public let topSafeAreaHeight = CGFloat(bottomSafeAreaHeight == 0 ? 0 : 24)
-
-/// 状态栏高度
+//适配iPhoneX
+//获取状态栏的高度，全面屏手机的状态栏高度为44pt，非全面屏手机的状态栏高度为20pt
+//状态栏高度
 public let statusBarHeight = UIApplication.shared.statusBarFrame.height;
 
-/// 导航栏高度
-public let navigationHeight = CGFloat(bottomSafeAreaHeight == 0 ? 64 :88)
+//导航栏高度
+public let navigationHeight = CGFloat(statusBarHeight + 44)
 
-/// tabbar 高度
-public let tabBarHeight = CGFloat(bottomSafeAreaHeight + 49)
+//tabbar高度
+public let tabBarHeight = CGFloat(statusBarHeight == 44 ? 83 : 49)
+
+//顶部的安全距离
+public let topSafeAreaHeight = CGFloat(statusBarHeight - 20)
+
+//底部的安全距离
+public let bottomSafeAreaHeight = CGFloat(tabBarHeight - 49)
 
 // MARK: 闭包
 public typealias ClickBlockVoid = ()->()
