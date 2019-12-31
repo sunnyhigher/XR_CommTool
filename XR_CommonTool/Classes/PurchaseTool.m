@@ -267,7 +267,7 @@ static PurchaseTool *_PopTools = nil;
     NSError *error;
     NSDictionary *requestContents = @{
                                       @"receipt-data": [receipt base64EncodedStringWithOptions:0],
-                                      @"password": self.purchSecret
+                                      @"password": [PurchaseTool PopTools].purchSecret
                                       };
     _CRPayData = [NSJSONSerialization dataWithJSONObject:requestContents options:0 error:&error];
     
