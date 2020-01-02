@@ -10,8 +10,6 @@
 #endif
 #endif
 
-#import "PurchaseTool.h"
-#import "RING_CryptoUtils.h"
 
 FOUNDATION_EXPORT double XR_CommonToolVersionNumber;
 FOUNDATION_EXPORT const unsigned char XR_CommonToolVersionString[];

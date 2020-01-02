@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'XR_CommonTool'
-    s.version          = '0.0.9'
+    s.version          = '0.1.0'
     s.summary          = '公司自用工具集合.'
     
     # This description is used to generate tags and improve search results.
