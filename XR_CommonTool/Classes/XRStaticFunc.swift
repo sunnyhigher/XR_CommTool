@@ -254,3 +254,12 @@ public func getTopVC(withCurrentVC VC :UIViewController?) -> UIViewController? {
 }
 
 
+//时间戳转 自定义格式时间
+public func timeIntervalWithforMattetData(ctime : Date ,dateFormatStr: String) -> String {
+    
+    let dateformatter = DateFormatter()
+    //自定义日期格式
+    dateformatter.dateFormat = dateFormatStr
+    
+    return dateformatter.string(from: ctime as Date)
+}

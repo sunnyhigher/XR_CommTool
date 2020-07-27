@@ -5,7 +5,7 @@
 //  Created by Mr.Xr on 2019/11/8.
 //  Copyright © 2019 炬点. All rights reserved.
 //
-public class XR_Purch: NSObject {
+@objc  public class XR_Purch: NSObject {
     
     public let XR_kIsPay               = "app.isPay.com"
     public let XR_kHasTrail            = "app.hasTrail.com"
@@ -18,8 +18,17 @@ public class XR_Purch: NSObject {
     public let XR_kIsTrialMonth        = "app.kIsTrialMonth.com"
     public let XR_kIsTrialYear         = "app.kIsTrialYear.com"
     
+    //项目内购标题
+    public let kLocalizedTitle         = "app.kLocalizedTitle.com"
+    //USD
+    public let kCurrencyCode        = "app.kCurrencyCode.com"
+    //货币单位
+    public let kCurrencyCodeUSB         = "app.kCurrencyCodeUSB.com"
     
-    public static let shared = XR_Purch()
+ 
+    
+    
+    @objc public static let shared = XR_Purch()
     
     /// 是否已经购买
     public var XR_hasPay: Bool {
@@ -47,9 +56,9 @@ public class XR_Purch: NSObject {
     }
     
     /// 周订阅价格字符串
-    public var XR_weekPriceString: String {
+   @objc public var XR_weekPriceString: String {
         get {
-            return UserDefaults.standard.string(forKey: XR_kWeeklyPrice) ?? "     3-day trial,then $9.99 for 1 week"
+            return UserDefaults.standard.string(forKey: XR_kWeeklyPrice) ?? "     3 day trial,then $9.99/week"
         }
         set {
             let user = UserDefaults.standard
@@ -59,9 +68,9 @@ public class XR_Purch: NSObject {
     }
     
     /// 月订阅价格字符串
-    public var XR_monthPriceString: String {
+    @objc public var XR_monthPriceString: String {
         get {
-            return UserDefaults.standard.string(forKey: XR_kMonthlyPrice) ?? "     3-day trial,then $19.99 for 1 mouth"
+            return UserDefaults.standard.string(forKey: XR_kMonthlyPrice) ?? "     3-day trial,then $19.99/month"
         }
         set {
             let user = UserDefaults.standard
@@ -71,9 +80,9 @@ public class XR_Purch: NSObject {
     }
 
     /// 年订阅价格字符串
-    public var XR_yearPriceString: String {
+    @objc public var XR_yearPriceString: String {
         get {
-            return UserDefaults.standard.string(forKey: XR_kYearlyPrice) ?? "     3-day trial,then $49.99 for 1 year"
+            return UserDefaults.standard.string(forKey: XR_kYearlyPrice) ?? "     3 day trial,then $49.99/year"
         }
         set {
             let user = UserDefaults.standard
@@ -83,9 +92,9 @@ public class XR_Purch: NSObject {
     }
     
     /// 使用展示字符
-    public var XR_trialDescribeString: String {
+    @objc public var XR_trialDescribeString: String {
         get {
-            return UserDefaults.standard.string(forKey: XR_kTrialDescribeString) ?? "     3-day trial,then $49.99 for 1 year"
+            return UserDefaults.standard.string(forKey: XR_kTrialDescribeString) ?? "     3 day trial,then $49.99/year"
         }
         set {
             let user = UserDefaults.standard
@@ -95,7 +104,7 @@ public class XR_Purch: NSObject {
     }
     
     /// 周是否试用
-    public var XR_hasTrialWeek: Bool {
+    @objc public var XR_hasTrialWeek: Bool {
         get {
             return UserDefaults.standard.bool(forKey: XR_kHasTrail)
         }
@@ -107,7 +116,7 @@ public class XR_Purch: NSObject {
     }
     
     /// 月是否试用
-    public var XR_hasTrialMonth: Bool {
+   @objc  public var XR_hasTrialMonth: Bool {
         get {
             return UserDefaults.standard.bool(forKey: XR_kIsTrialMonth)
         }
@@ -119,7 +128,7 @@ public class XR_Purch: NSObject {
     }
     
     /// 年是否试用
-    public var XR_hasTrialYear: Bool {
+    @objc public var XR_hasTrialYear: Bool {
         get {
             return UserDefaults.standard.bool(forKey: XR_kIsTrialYear)
         }
@@ -132,6 +141,41 @@ public class XR_Purch: NSObject {
     
     /// 是否获取到价格信息
     public var requestState: Bool = false
+    
+    /// 内购标题
+    @objc public var XR_hasLocalizedTitle: String {
+        
+        get {
+            return UserDefaults.standard.string(forKey: kLocalizedTitle) ?? "内购标题"
+        }
+        set {
+            let user = UserDefaults.standard
+            user.set(newValue, forKey: kLocalizedTitle)
+            user.synchronize()
+        }
+    }
+     
+     /// 货币单位
+    @objc  public var XR_hasCurrencyCode : String {
+         get {
+            return UserDefaults.standard.string(forKey: kCurrencyCode) ?? "$"
+         }
+         set {
+             let user = UserDefaults.standard
+             user.set(newValue, forKey: kCurrencyCode)
+             user.synchronize()
+         }
+     }
+     
+     /// USD  货币符号
+     @objc public var XR_hasCurrencyCodeUSB: String {
+         get {
+             return UserDefaults.standard.string(forKey: kCurrencyCodeUSB) ?? "USD"
+         }
+         set {
+             let user = UserDefaults.standard
+             user.set(newValue, forKey: kCurrencyCodeUSB)
+             user.synchronize()
+         }
+     }
 }
-
-
